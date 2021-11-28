@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS character;
+DROP TABLE IF EXISTS episode;
+
+CREATE TABLE character (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  status TEXT NOT NULL,
+  species TEXT NOT NULL,
+  type TEXT,
+  gender TEXT NOT NULL
+);
+
+CREATE TABLE episode (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  air_date TEXT NOT NULL,
+  episode TEXT NOT NULL
+);
+
+CREATE TABLE joinEpisodeCharacter (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  FOREIGN KEY (character_id) REFERENCES character (id)
+  FOREIGN KEY (episode_id) REFERENCES episode (id)
+);
