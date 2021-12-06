@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS characters;
 DROP TABLE IF EXISTS episodes;
 DROP TABLE IF EXISTS joinEpisodesCharacters;
+DROP TABLE IF EXISTS comments;
 
 CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

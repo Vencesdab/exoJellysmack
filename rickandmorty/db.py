@@ -44,10 +44,9 @@ def init_db():
                     (row['name'], row['status'], row['species'], row['type'] ,row['gender'])
                     )
         for episode_id in row['episode']:
-            cur.execute("INSERT INTO joinEpisodeCharacter (character_id, episode_id) VALUES (?, ?)",
+            cur.execute("INSERT INTO joinEpisodesCharacters (character_id, episode_id) VALUES (?, ?)",
                     (row['id'], episode_id)
                     )
-
     db.commit()
 
 

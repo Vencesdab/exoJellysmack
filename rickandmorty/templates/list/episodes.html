@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Episodes {% endblock %}</h1>
+    {% for episode in episodes %}
+        <div class='episode'>
+            <h2>{{ episode['name'] }}</h2>
+            <p>{{ "Air date: " + episode['air_date'] }}</p>
+            <p>{{ "Number: " + episode['episode'] }}</p>
+            <p>{{ "Recurring character: " + ", ".join(character_dict[episode['id']]) if episode['id'] in character_dict else ""}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
